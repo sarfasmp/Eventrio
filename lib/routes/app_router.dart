@@ -22,6 +22,7 @@ import 'package:event_and_voucher/screens/splash/splash_screen.dart';
 import 'package:event_and_voucher/screens/onboarding/onboarding_screen.dart';
 import 'package:event_and_voucher/screens/profile/organizer_profile_screen.dart';
 import 'package:event_and_voucher/screens/notifications/notifications_screen.dart';
+import 'package:event_and_voucher/screens/typography/typography_demo_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   final router = GoRouter(
@@ -182,6 +183,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/notifications',
         name: 'notifications',
         builder: (context, state) => const NotificationsScreen(),
+      ),
+      GoRoute(
+        path: '/typography',
+        name: 'typography',
+        builder: (context, state) => const TypographyDemoScreen(),
       ),
     ],
   );

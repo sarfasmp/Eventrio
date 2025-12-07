@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:event_and_voucher/theme/app_typography.dart';
 
 class AppTheme {
   // Primary Colors
@@ -61,7 +62,7 @@ class AppTheme {
   // Theme data
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: GoogleFonts.urbanist().fontFamily,
+    fontFamily: AppTypography.fontFamily,
     colorScheme: ColorScheme.fromSeed(
       seedColor: primaryOrange,
       brightness: Brightness.light,
@@ -82,10 +83,8 @@ class AppTheme {
       foregroundColor: textBlack,
       surfaceTintColor: Colors.transparent,
       iconTheme: const IconThemeData(color: textBlack),
-      titleTextStyle: GoogleFonts.urbanist(
+      titleTextStyle: AppTypography.heading02.copyWith(
         color: textBlack,
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
       ),
     ),
     cardTheme: CardThemeData(
@@ -115,11 +114,11 @@ class AppTheme {
     inputDecorationTheme: InputDecorationTheme(
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(color: grey2),
+        borderSide: const BorderSide(color: grey2),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(color: grey2),
+        borderSide: const BorderSide(color: grey2),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
@@ -137,39 +136,25 @@ class AppTheme {
       backgroundColor: primaryOrange.withValues(alpha: 0.1),
       labelStyle: const TextStyle(color: primaryOrange),
     ),
-    textTheme: GoogleFonts.urbanistTextTheme().copyWith(
-      displayLarge: GoogleFonts.urbanist(
-        fontSize: 32,
-        fontWeight: FontWeight.bold,
-        color: textBlack,
-        letterSpacing: -0.5,
-      ),
-      displayMedium: GoogleFonts.urbanist(
-        fontSize: 28,
-        fontWeight: FontWeight.bold,
-        color: textBlack,
-        letterSpacing: -0.5,
-      ),
-      headlineLarge: GoogleFonts.urbanist(
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-        color: textBlack,
-      ),
-      bodyLarge: GoogleFonts.urbanist(
-        fontSize: 16,
-        color: textBlack,
-        fontWeight: FontWeight.w500,
-      ),
-      bodyMedium: GoogleFonts.urbanist(
-        fontSize: 14,
-        color: softDarkish,
-      ),
+    textTheme: GoogleFonts.interTextTheme().copyWith(
+      displayLarge: AppTypography.heading01,
+      displayMedium: AppTypography.heading02,
+      headlineLarge: AppTypography.heading03,
+      headlineMedium: AppTypography.heading04,
+      headlineSmall: AppTypography.heading05,
+      titleLarge: AppTypography.heading06,
+      bodyLarge: AppTypography.body01,
+      bodyMedium: AppTypography.body02,
+      bodySmall: AppTypography.body03,
+      labelLarge: AppTypography.button01,
+      labelMedium: AppTypography.button02,
+      labelSmall: AppTypography.button03,
     ),
   );
 
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: GoogleFonts.urbanist().fontFamily,
+    fontFamily: AppTypography.fontFamily,
     colorScheme: ColorScheme.fromSeed(
       seedColor: primaryOrange,
       brightness: Brightness.dark,
@@ -190,10 +175,8 @@ class AppTheme {
       foregroundColor: textWhite,
       surfaceTintColor: Colors.transparent,
       iconTheme: const IconThemeData(color: textWhite),
-      titleTextStyle: GoogleFonts.urbanist(
+      titleTextStyle: AppTypography.heading02.copyWith(
         color: textWhite,
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
       ),
     ),
     cardTheme: CardThemeData(
@@ -223,11 +206,11 @@ class AppTheme {
     inputDecorationTheme: InputDecorationTheme(
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(color: softDarkish),
+        borderSide: const BorderSide(color: softDarkish),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(color: softDarkish),
+        borderSide: const BorderSide(color: softDarkish),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
@@ -245,33 +228,19 @@ class AppTheme {
       backgroundColor: primaryOrange.withValues(alpha: 0.2),
       labelStyle: const TextStyle(color: primaryOrange),
     ),
-    textTheme: GoogleFonts.urbanistTextTheme().copyWith(
-      displayLarge: GoogleFonts.urbanist(
-        fontSize: 32,
-        fontWeight: FontWeight.bold,
-        color: textWhite,
-        letterSpacing: -0.5,
-      ),
-      displayMedium: GoogleFonts.urbanist(
-        fontSize: 28,
-        fontWeight: FontWeight.bold,
-        color: textWhite,
-        letterSpacing: -0.5,
-      ),
-      headlineLarge: GoogleFonts.urbanist(
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-        color: textWhite,
-      ),
-      bodyLarge: GoogleFonts.urbanist(
-        fontSize: 16,
-        color: textWhite,
-        fontWeight: FontWeight.w500,
-      ),
-      bodyMedium: GoogleFonts.urbanist(
-        fontSize: 14,
-        color: softDarkish,
-      ),
+    textTheme: GoogleFonts.interTextTheme().copyWith(
+      displayLarge: AppTypography.heading01.copyWith(color: textWhite),
+      displayMedium: AppTypography.heading02.copyWith(color: textWhite),
+      headlineLarge: AppTypography.heading03.copyWith(color: textWhite),
+      headlineMedium: AppTypography.heading04.copyWith(color: textWhite),
+      headlineSmall: AppTypography.heading05.copyWith(color: textWhite),
+      titleLarge: AppTypography.heading06.copyWith(color: textWhite),
+      bodyLarge: AppTypography.body01.copyWith(color: textWhite),
+      bodyMedium: AppTypography.body02.copyWith(color: textWhite),
+      bodySmall: AppTypography.body03.copyWith(color: textWhite),
+      labelLarge: AppTypography.button01.copyWith(color: textWhite),
+      labelMedium: AppTypography.button02.copyWith(color: textWhite),
+      labelSmall: AppTypography.button03.copyWith(color: textWhite),
     ),
   );
 }
