@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:event_and_voucher/services/event_service.dart';
 import 'package:event_and_voucher/models/event.dart';
 import 'package:event_and_voucher/theme/app_theme.dart';
+import 'package:event_and_voucher/providers/drawer_provider.dart';
 
-class EventsScreen extends StatefulWidget {
+class EventsScreen extends ConsumerStatefulWidget {
   const EventsScreen({super.key});
 
   @override
-  State<EventsScreen> createState() => _EventsScreenState();
+  ConsumerState<EventsScreen> createState() => _EventsScreenState();
 }
 
-class _EventsScreenState extends State<EventsScreen> {
+class _EventsScreenState extends ConsumerState<EventsScreen> {
   String _selectedCategory = 'Design';
   final List<String> _categories = ['Design', 'Art', 'Sports', 'Music'];
 
@@ -43,22 +45,27 @@ class _EventsScreenState extends State<EventsScreen> {
                         // Profile Section
                         Row(
                           children: [
-                            // Profile Picture
-                            Container(
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.grey.shade800,
-                                border: Border.all(
-                                  color: AppTheme.primaryOrange,
-                                  width: 2,
+                            // Profile Picture (opens drawer)
+                            GestureDetector(
+                              onTap: () {
+                                ref.read(drawerProvider.notifier).openDrawer();
+                              },
+                              child: Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.grey.shade800,
+                                  border: Border.all(
+                                    color: AppTheme.primaryOrange,
+                                    width: 2,
+                                  ),
                                 ),
-                              ),
-                              child: Icon(
-                                Icons.person,
-                                color: Colors.grey.shade400,
-                                size: 30,
+                                child: Icon(
+                                  Icons.person,
+                                  color: Colors.grey.shade400,
+                                  size: 30,
+                                ),
                               ),
                             ),
                             const SizedBox(width: 12),
@@ -129,26 +136,33 @@ class _EventsScreenState extends State<EventsScreen> {
                     Row(
                       children: [
                         Expanded(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade800,
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: TextField(
-                              style: const TextStyle(color: Colors.white),
-                              decoration: InputDecoration(
-                                hintText: 'Find amazing events',
-                                hintStyle: TextStyle(
-                                  color: Colors.grey.shade500,
-                                ),
-                                prefixIcon: Icon(
-                                  Icons.search,
-                                  color: Colors.grey.shade500,
-                                ),
-                                border: InputBorder.none,
-                                contentPadding: const EdgeInsets.symmetric(
-                                  horizontal: 16,
-                                  vertical: 14,
+                          child: GestureDetector(
+                            onTap: () {
+                              context.push('/search');
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.grey.shade800,
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: AbsorbPointer(
+                                child: TextField(
+                                  style: const TextStyle(color: Colors.white),
+                                  decoration: InputDecoration(
+                                    hintText: 'Find amazing events',
+                                    hintStyle: TextStyle(
+                                      color: Colors.grey.shade500,
+                                    ),
+                                    prefixIcon: Icon(
+                                      Icons.search,
+                                      color: Colors.grey.shade500,
+                                    ),
+                                    border: InputBorder.none,
+                                    contentPadding: const EdgeInsets.symmetric(
+                                      horizontal: 16,
+                                      vertical: 14,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),

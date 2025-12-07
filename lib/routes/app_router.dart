@@ -8,6 +8,9 @@ import 'package:event_and_voucher/screens/home/home_screen.dart';
 import 'package:event_and_voucher/screens/events/events_screen.dart';
 import 'package:event_and_voucher/screens/events/event_detail_screen.dart';
 import 'package:event_and_voucher/screens/events/events_view_all_screen.dart';
+import 'package:event_and_voucher/screens/events/search_screen.dart';
+import 'package:event_and_voucher/screens/events/create_event_screen.dart';
+import 'package:event_and_voucher/screens/events/edit_event_screen.dart';
 import 'package:event_and_voucher/screens/vouchers/vouchers_screen.dart';
 import 'package:event_and_voucher/screens/vouchers/voucher_detail_screen.dart';
 import 'package:event_and_voucher/screens/cart/cart_screen.dart';
@@ -18,6 +21,7 @@ import 'package:event_and_voucher/screens/auth/registration_screen.dart';
 import 'package:event_and_voucher/screens/splash/splash_screen.dart';
 import 'package:event_and_voucher/screens/onboarding/onboarding_screen.dart';
 import 'package:event_and_voucher/screens/profile/organizer_profile_screen.dart';
+import 'package:event_and_voucher/screens/notifications/notifications_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   final router = GoRouter(
@@ -113,6 +117,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => const EventsViewAllScreen(),
       ),
       GoRoute(
+        path: '/search',
+        name: 'search',
+        builder: (context, state) => const SearchScreen(),
+      ),
+      GoRoute(
         path: '/event/:id',
         name: 'event-detail',
         builder: (context, state) {
@@ -124,6 +133,25 @@ final routerProvider = Provider<GoRouter>((ref) {
             );
           }
           return EventDetailScreen(event: event);
+        },
+      ),
+      GoRoute(
+        path: '/events/create',
+        name: 'create-event',
+        builder: (context, state) => const CreateEventScreen(),
+      ),
+      GoRoute(
+        path: '/event/:id/edit',
+        name: 'edit-event',
+        builder: (context, state) {
+          final eventId = state.pathParameters['id']!;
+          final event = EventService.getEventById(eventId);
+          if (event == null) {
+            return const Scaffold(
+              body: Center(child: Text('Event not found')),
+            );
+          }
+          return EditEventScreen(event: event);
         },
       ),
       GoRoute(
@@ -149,6 +177,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/profile',
         name: 'profile',
         builder: (context, state) => const OrganizerProfileScreen(),
+      ),
+      GoRoute(
+        path: '/notifications',
+        name: 'notifications',
+        builder: (context, state) => const NotificationsScreen(),
       ),
     ],
   );
