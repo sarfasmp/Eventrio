@@ -110,6 +110,11 @@ final routerProvider = Provider<GoRouter>((ref) {
             name: 'cart',
             builder: (context, state) => const CartScreen(),
           ),
+          GoRoute(
+            path: '/profile',
+            name: 'profile',
+            builder: (context, state) => const OrganizerProfileScreen(),
+          ),
         ],
       ),
       GoRoute(
@@ -173,11 +178,6 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/checkout',
         name: 'checkout',
         builder: (context, state) => const CheckoutScreen(),
-      ),
-      GoRoute(
-        path: '/profile',
-        name: 'profile',
-        builder: (context, state) => const OrganizerProfileScreen(),
       ),
       GoRoute(
         path: '/notifications',

@@ -584,3 +584,4 @@ final List<Map<String, dynamic>> _categoryData = [
   {'name': 'Music', 'icon': Icons.music_note, 'color': Colors.red},
 ];
 
+

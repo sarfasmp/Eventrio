@@ -6,10 +6,10 @@ import 'package:event_and_voucher/theme/app_theme.dart';
 /// Implements all typography styles: Heading, Body, Button, and Caption
 class AppTypography {
   // Font Family
-  static const String fontFamily = 'Inter';
+  static const String fontFamily = 'Urbanist';
   
   // Get Inter font
-  static TextStyle _inter({
+  static TextStyle _urbanist({
     required double fontSize,
     required FontWeight fontWeight,
     double? height,
@@ -28,7 +28,7 @@ class AppTypography {
   // ==================== HEADING STYLES ====================
   
   /// Heading 01: 32px, Line Height: 48, Semi Bold
-  static TextStyle get heading01 => _inter(
+  static TextStyle get heading01 => _urbanist(
     fontSize: 32,
     fontWeight: FontWeight.w600, // Semi Bold
     height: 48,
@@ -36,7 +36,7 @@ class AppTypography {
   );
 
   /// Heading 02: 20px, Line Height: 30, Semi Bold
-  static TextStyle get heading02 => _inter(
+  static TextStyle get heading02 => _urbanist(
     fontSize: 20,
     fontWeight: FontWeight.w600,
     height: 30,
@@ -44,7 +44,7 @@ class AppTypography {
   );
 
   /// Heading 03: 18px, Line Height: 28, Semi Bold
-  static TextStyle get heading03 => _inter(
+  static TextStyle get heading03 => _urbanist(
     fontSize: 18,
     fontWeight: FontWeight.w600,
     height: 28,
@@ -52,21 +52,21 @@ class AppTypography {
   );
 
   /// Heading 04: 16px, Line Height: Auto, Semi Bold
-  static TextStyle get heading04 => _inter(
+  static TextStyle get heading04 => _urbanist(
     fontSize: 16,
     fontWeight: FontWeight.w600,
     letterSpacing: 0,
   );
 
   /// Heading 05: 14px, Line Height: Auto, Semi Bold
-  static TextStyle get heading05 => _inter(
+  static TextStyle get heading05 => _urbanist(
     fontSize: 14,
     fontWeight: FontWeight.w600,
     letterSpacing: 0,
   );
 
   /// Heading 06: 12px, Line Height: Auto, Semi Bold
-  static TextStyle get heading06 => _inter(
+  static TextStyle get heading06 => _urbanist(
     fontSize: 12,
     fontWeight: FontWeight.w600,
     letterSpacing: 0,
@@ -75,7 +75,7 @@ class AppTypography {
   // ==================== BODY STYLES ====================
   
   /// Body 01: 14px, Line Height: 24, Regular
-  static TextStyle get body01 => _inter(
+  static TextStyle get body01 => _urbanist(
     fontSize: 14,
     fontWeight: FontWeight.w400, // Regular
     height: 24,
@@ -83,7 +83,7 @@ class AppTypography {
   );
 
   /// Body 02: 12px, Line Height: 22, Regular
-  static TextStyle get body02 => _inter(
+  static TextStyle get body02 => _urbanist(
     fontSize: 12,
     fontWeight: FontWeight.w400,
     height: 22,
@@ -91,7 +91,7 @@ class AppTypography {
   );
 
   /// Body 03: 12px, Line Height: 20, Medium
-  static TextStyle get body03 => _inter(
+  static TextStyle get body03 => _urbanist(
     fontSize: 12,
     fontWeight: FontWeight.w500, // Medium
     height: 20,
@@ -99,7 +99,7 @@ class AppTypography {
   );
 
   /// Body 04: 12px, Line Height: 16, Regular
-  static TextStyle get body04 => _inter(
+  static TextStyle get body04 => _urbanist(
     fontSize: 12,
     fontWeight: FontWeight.w400,
     height: 16,
@@ -107,14 +107,14 @@ class AppTypography {
   );
 
   /// Body 05: 10px, Line Height: Auto, Regular
-  static TextStyle get body05 => _inter(
+  static TextStyle get body05 => _urbanist(
     fontSize: 10,
     fontWeight: FontWeight.w400,
     letterSpacing: 0,
   );
 
   /// Body 06: 6px, Line Height: 10, Medium
-  static TextStyle get body06 => _inter(
+  static TextStyle get body06 => _urbanist(
     fontSize: 6,
     fontWeight: FontWeight.w500,
     height: 10,
@@ -124,7 +124,7 @@ class AppTypography {
   // ==================== BUTTON STYLES ====================
   
   /// Button 01: 14px, Line Height: 18, Semi Bold
-  static TextStyle get button01 => _inter(
+  static TextStyle get button01 => _urbanist(
     fontSize: 14,
     fontWeight: FontWeight.w600,
     height: 18,
@@ -132,7 +132,7 @@ class AppTypography {
   );
 
   /// Button 02: 12px, Line Height: 20, Semi Bold
-  static TextStyle get button02 => _inter(
+  static TextStyle get button02 => _urbanist(
     fontSize: 12,
     fontWeight: FontWeight.w600,
     height: 20,
@@ -140,7 +140,7 @@ class AppTypography {
   );
 
   /// Button 03: 10px, Line Height: Auto, Semi Bold
-  static TextStyle get button03 => _inter(
+  static TextStyle get button03 => _urbanist(
     fontSize: 10,
     fontWeight: FontWeight.w600,
     letterSpacing: 0,
@@ -149,7 +149,7 @@ class AppTypography {
   // ==================== CAPTION STYLES ====================
   
   /// Caption 01: 16px, Line Height: 24, Regular
-  static TextStyle get caption01 => _inter(
+  static TextStyle get caption01 => _urbanist(
     fontSize: 16,
     fontWeight: FontWeight.w400,
     height: 24,
@@ -157,14 +157,14 @@ class AppTypography {
   );
 
   /// Caption 02: 14px, Line Height: Auto, Regular
-  static TextStyle get caption02 => _inter(
+  static TextStyle get caption02 => _urbanist(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     letterSpacing: 0,
   );
 
   /// Caption 03: 12px, Line Height: 24, Semi Bold
-  static TextStyle get caption03 => _inter(
+  static TextStyle get caption03 => _urbanist(
     fontSize: 12,
     fontWeight: FontWeight.w600,
     height: 24,
@@ -172,7 +172,7 @@ class AppTypography {
   );
 
   /// Caption 04: 12px, Line Height: 16, Medium
-  static TextStyle get caption04 => _inter(
+  static TextStyle get caption04 => _urbanist(
     fontSize: 12,
     fontWeight: FontWeight.w500,
     height: 16,
@@ -180,7 +180,7 @@ class AppTypography {
   );
 
   /// Caption 05: 12px, Line Height: 12, Regular
-  static TextStyle get caption05 => _inter(
+  static TextStyle get caption05 => _urbanist(
     fontSize: 12,
     fontWeight: FontWeight.w400,
     height: 12,
@@ -188,14 +188,14 @@ class AppTypography {
   );
 
   /// Caption 06: 10px, Line Height: Auto, Semi Bold
-  static TextStyle get caption06 => _inter(
+  static TextStyle get caption06 => _urbanist(
     fontSize: 10,
     fontWeight: FontWeight.w600,
     letterSpacing: 0,
   );
 
   /// Caption 07: 6px, Line Height: Auto, Semi Bold
-  static TextStyle get caption07 => _inter(
+  static TextStyle get caption07 => _urbanist(
     fontSize: 6,
     fontWeight: FontWeight.w600,
     letterSpacing: 0,

@@ -223,7 +223,7 @@ class _EventsScreenState extends ConsumerState<EventsScreen> {
 
               // Popular Events Horizontal List
               SizedBox(
-                height: 320,
+                height: 325,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -381,6 +381,7 @@ class _PopularEventCard extends StatelessWidget {
               ),
             ],
           ),
+
 
           // Event Details
           Padding(

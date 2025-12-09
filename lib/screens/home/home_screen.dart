@@ -50,6 +50,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         case 2:
           context.go('/cart');
           break;
+        case 3:
+          context.go('/profile');
+          break;
       }
     }
 
@@ -108,9 +111,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 _BottomNavItem(
                   icon: Icons.person,
                   isSelected: currentIndex == 3,
-                  onTap: () {
-                    ref.read(drawerProvider.notifier).openDrawer();
-                  },
+                  onTap:  () => onItemTapped(3)
                 ),
               ],
             ),

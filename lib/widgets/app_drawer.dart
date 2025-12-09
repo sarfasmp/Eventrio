@@ -79,7 +79,24 @@ class AppDrawer extends ConsumerWidget {
             // Content
             SafeArea(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  // Close Button
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.close, color: AppTheme.white, size: 24),
+                        onPressed: () => Navigator.pop(context),
+                        padding: EdgeInsets.zero,
+                        constraints: const BoxConstraints(
+                          minWidth: 32,
+                          minHeight: 32,
+                        ),
+                      ),
+                    ],
+                  ),
                   // Header Row with Profile and Close Button
                   Padding(
                     padding: const EdgeInsets.fromLTRB(24, 20, 16, 0),
@@ -137,16 +154,7 @@ class AppDrawer extends ConsumerWidget {
                             ],
                           ),
                         ),
-                        // Close Button
-                        IconButton(
-                          icon: const Icon(Icons.close, color: AppTheme.white, size: 24),
-                          onPressed: () => Navigator.pop(context),
-                          padding: EdgeInsets.zero,
-                          constraints: const BoxConstraints(
-                            minWidth: 32,
-                            minHeight: 32,
-                          ),
-                        ),
+
                       ],
                     ),
                   ),
@@ -298,6 +306,7 @@ class _DrawerMenuItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 12),
         child: Row(
           children: [
+            const SizedBox(width: 55),
             Icon(
               icon,
               color: AppTheme.white,
